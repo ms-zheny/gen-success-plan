@@ -32,7 +32,6 @@ with st.sidebar:
             key=1 # Optional if only a single instance is needed
     )
 
-
 if not auth_data:
     st.image('./assets/home.jpg', caption='Created by Zhen YUAN', use_column_width='auto')
     st.stop()
