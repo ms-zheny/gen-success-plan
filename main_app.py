@@ -1,11 +1,7 @@
 import streamlit as st
-from msal import PublicClientApplication
-import webbrowser
-import requests
 import urllib.request
 import json
 import os
-import ssl
 
 
 from dotenv import load_dotenv
