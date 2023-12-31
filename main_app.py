@@ -14,9 +14,6 @@ website = st.text_input("Website URL",help="Enter Customer's website URL")
 
 if tpid and website:
 
-    #st.write("TPID: ", tpid)
-    #st.write("Website: ", website)
-
     data = {
         'TPID': tpid,
         'CustomerSiteURL': website
@@ -26,13 +23,12 @@ if tpid and website:
 
     url = os.getenv("ENDPOINT")
     api_key = os.getenv("API_KEY")
+    azureml_model_deployment = os.getenv("ENDPOINT_DEPLOYMENT_MODEL")
 
     if not api_key:
         raise Exception("A key should be provided to invoke the endpoint")
 
-    # The azureml-model-deployment header will force the request to go to a specific deployment.
-    # Remove this header to have the request observe the endpoint traffic rules
-    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': 'smb-csa-success-plan-endpoint-2' }
+    headers = {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment': azureml_model_deployment }
 
     req = urllib.request.Request(url, body, headers)
 
