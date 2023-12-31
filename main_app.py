@@ -2,11 +2,12 @@ import streamlit as st
 import urllib.request
 import json
 import os
-
+import utils
 
 from dotenv import load_dotenv
 load_dotenv()
 
+utils.setup_page("Home")
 
 tpid = st.text_input("TPID", help="Enter TPID")
 website = st.text_input("Website URL",help="Enter Customer's website URL")
