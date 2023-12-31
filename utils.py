@@ -14,8 +14,10 @@ def setup_page(page_title):
     access_token = st.session_state.get('access_token')
 
     if access_token:
-        user_info = security.get_user_info(access_token)
-        st.session_state['user_info'] = user_info
+        #user_info = security.get_user_info(access_token)
+        #st.session_state['user_info'] = user_info
+        st.write('Welcom back! ' + st.session_state['user_info'])
+        
         return True
     else:
         col1, col2 = st.columns([1,3])
