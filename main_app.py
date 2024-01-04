@@ -9,6 +9,8 @@ load_dotenv()
 
 utils.setup_page("Home")
 
+st.info ("This application is based on GPT-4 model, it includes a range of sources, such as sucess center, and websites, up until 31 Dec 2023",icon="ℹ️")
+
 tpid = st.text_input("TPID", help="Enter TPID")
 website = st.text_input("Website URL",help="Enter Customer's website URL")
 
