@@ -9,7 +9,7 @@ load_dotenv()
 
 utils.setup_page("Home")
 
-st.info ("This application is based on GPT-4 model, it includes a range of sources, such as sucess center, and websites, up until 26 Feb 24",icon="ℹ️")
+st.info ("This application is based on GPT-4 model, it includes a range of sources, such as sucess center, and websites, up until 25 Sep 24",icon="ℹ️")
 
 tpid = st.text_input("TPID", help="Enter TPID")
 website = st.text_input("Website URL",help="Enter Customer's website URL")
@@ -26,6 +26,8 @@ if tpid and website:
     url = os.getenv("ENDPOINT")
     api_key = os.getenv("API_KEY")
     azureml_model_deployment = os.getenv("ENDPOINT_DEPLOYMENT_MODEL")
+
+    print(url + " " + api_key + " " + azureml_model_deployment)
 
     if not api_key:
         raise Exception("A key should be provided to invoke the endpoint")
